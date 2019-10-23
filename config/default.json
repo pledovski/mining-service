@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://pledovski:AtjNW8QQq7yMMx2dJZyC2nW-dEW2oNY*HCWD@cloud-mining-mhmiy.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://pledovski:AtjNW8QQq7yMMx2dJZyC2nW-dEW2oNY*HCWD@cloud-mining-mhmiy.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "verySecretToken"
 }

@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
   email: {
-    type: 'string',
+    type: String,
     required: true,
     unique: true
   },
   password: {
-    type: 'string',
+    type: String,
     required: true
   },
   createdAt: {
@@ -15,13 +15,11 @@ const UserSchema = new mongoose.Schema({
     default: Date.now
   },
   deletedAt: {
-    type: Date,
-    default: Date.now
+    type: Date
   },
   isAdmin: {
     type: Boolean,
-    default: false,
-    required: true
+    default: false
   }
 });
 
