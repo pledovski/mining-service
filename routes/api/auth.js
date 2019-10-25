@@ -9,6 +9,7 @@ const config = require("config");
 const User = require("../../models/User");
 
 // Tests
+// @ legacy
 const getLastBlock = require("../../controllers/block");
 const getPoolStats = require("../../controllers/pool");
 

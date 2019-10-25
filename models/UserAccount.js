@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const UserBalanceSchema = new mongoose.Schema({
+const UserAccountSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "user"
@@ -8,28 +8,35 @@ const UserBalanceSchema = new mongoose.Schema({
   balances: [
     {
       assetId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "asset"
+        type: Number,
+        // ref: "asset"
       },
       walletId: {
-        type: mongoose.Schema.Types.ObjectId
+        type: Number,
       },
-      pubKey: {
+      assetSymbol: {
         type: String,
-        required: true
+        required: true,
+        unique: true
       },
+      assetName: {
+        type: String,
+        required: true,
+        unique: true
+      },
+      // pubKey: {
+      //   type: String,
+      //   required: true
+      // },
       createdAt: {
         type: Date,
         default: Date.now
       },
       balance: {
-        type: Number
+        type: Number,
+        default: 0
       },
       updatedAt: {
-        type: Date,
-        default: Date.now
-      },
-      deletedAt: {
         type: Date,
         default: Date.now
       }
@@ -37,4 +44,4 @@ const UserBalanceSchema = new mongoose.Schema({
   ]
 });
 
-module.exports = UserBalance = mongoose.model("userBalance", UserBalanceSchema);
+module.exports = UserAccount = mongoose.model("userAccount", UserAccountSchema);

@@ -15,6 +15,8 @@ app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/user-account', require('./routes/api/userAccount'));
 app.use('/api/platform-account', require('./routes/api/platformAccount'));
+app.use('/api/asset', require('./routes/api/asset'));
+app.use('/api/allocation', require('./routes/api/allocation'));
 // app.use('/api/mining', require('./controllers/mining'));
 
 const PORT = process.env.PORT || 5000;

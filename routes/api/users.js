@@ -7,6 +7,8 @@ const config = require('config');
 
 const User = require("../../models/User");
 
+const userAccount = require("../../controllers/userAccount")
+
 // @route     POST api/users
 // @desc      Register user
 // @access    Public
@@ -43,6 +45,9 @@ router.post(
       user.password = await bcrypt.hash(password, salt);
 
       await user.save();
+
+      userAccount(user.id);
+
       res.status(200).json({ msg: "User registered"});
     } catch (err) {
       console.log(err.message);
