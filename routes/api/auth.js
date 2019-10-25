@@ -8,6 +8,10 @@ const config = require("config");
 
 const User = require("../../models/User");
 
+// Tests
+const getLastBlock = require("../../controllers/block");
+const getPoolStats = require("../../controllers/pool");
+
 // @route     GET api/auth
 // @desc      Get authenticated user
 // @access    Public

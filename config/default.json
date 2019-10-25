@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://pledovski:AtjNW8QQq7yMMx2dJZyC2nW-dEW2oNY*HCWD@cloud-mining-mhmiy.mongodb.net/test?retryWrites=true&w=majority",
-  "jwtSecret": "verySecretToken"
+  "jwtSecret": "verySecretToken",
+  "blockURI": "https://bitminter.com/api/pool/blocks?commodity=BTC&max=1",
+  "poolURI": "https://bitminter.com/api/pool/stats"
 }

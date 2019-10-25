@@ -2,29 +2,33 @@ const mongoose = require("mongoose");
 
 const PoolSchema = new mongoose.Schema({
   poolName: {
-    type: "string",
+    type: String,
     required: true
   },
   poolId: {
-    type: "number",
+    type: Number,
     required: true,
     unique: true
   },
   algo: {
-    type: "string",
+    type: String,
     required: true
   },
   minersCount: {
-    type: "number",
+    type: Number,
     required: true
   },
   totalHashrate: {
-    type: "number",
+    type: Number,
     required: true
   },
   power: {
-    type: "string",
+    type: Number,
     required: true
+  },
+  fetchedAt: {
+    type: Date,
+    default: Date.now
   }
 });
 
