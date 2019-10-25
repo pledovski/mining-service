@@ -13,7 +13,8 @@ app.get('/', (req, res) => res.send('API Running'));
 // Define Routes
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
-app.use('/api/balance', require('./routes/api/userBalance'));
+app.use('/api/user-account', require('./routes/api/userAccount'));
+app.use('/api/platform-account', require('./routes/api/platformAccount'));
 // app.use('/api/mining', require('./controllers/mining'));
 
 const PORT = process.env.PORT || 5000;

@@ -32,7 +32,7 @@ router.post(
   "/",
   [
     check("email", "Email is required").isEmail(),
-    check("password", "Please is required").exists()
+    check("password", "Password is required").exists()
   ],
   async (req, res) => {
     const errors = validationResult(req);

@@ -31,6 +31,8 @@ const getPoolStats = () => {
           console.log(pool);
 
           await pool.save();
+        } else {
+          console.log(res.status(500).json({ msg: "Pool not found" }));
         }
       } catch (err) {
         if (error) console.error(error);

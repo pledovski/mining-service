@@ -19,8 +19,6 @@ const getLastBlock = async () => {
 
         const lastSavedBlock = await Block.findOne(lastPoolBlock.blockHeight);
 
-        // console.log(lastPoolBlock);
-
         console.log('Block fetch script running...')
 
         if (lastSavedBlock == null || lastSavedBlock.blockHeight !== lastPoolBlock.height) {

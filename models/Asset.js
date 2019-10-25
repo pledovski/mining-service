@@ -2,50 +2,50 @@ const mongoose = require("mongoose");
 
 const AssetSchema = new mongoose.Schema({
   algoId: {
-    type: "number",
+    type: Number,
     required: true
   },
   logoURL: {
-    type: "string"
+    type: String
   },
   assetSymbol: {
-    type: "string",
+    type: String,
     required: true
   },
   assetName: {
-    type: "string",
+    type: String,
     required: true
   },
   minable: {
-    type: "boolean",
+    type: Boolean,
     required: true
   },
   canMine: {
-    type: "boolean",
+    type: Boolean,
     required: true
   },
   totalHashrate: {
-    type: "number",
+    type: Number,
     required: true
   },
   hashesAllocated: {
-    type: "number",
+    type: Number,
     required: true
   },
   sharesSubmitted: {
-    type: "number",
+    type: Number,
     required: true
   },
   priceUSD: {
-    type: "number",
+    type: Number,
     required: true
   },
   lastBlockId: {
-    type: "number",
+    type: Number,
     required: true
   },
   blockReward: {
-    type: "number",
+    type: Number,
     required: true
   },
   createdAt: {
