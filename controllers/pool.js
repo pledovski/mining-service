@@ -28,8 +28,6 @@ const getPoolStats = () => {
             power: 115000000
           });
 
-          console.log(pool);
-
           await pool.save();
         } else {
           console.log(res.status(500).json({ msg: "Pool not found" }));

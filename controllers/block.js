@@ -37,8 +37,6 @@ const getLastBlock = async () => {
             foundAt: generated
           });
 
-          console.log(block);
-
           await block.save();
         }
       } catch (err) {

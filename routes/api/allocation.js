@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../../middleware/auth");
 const { check, validationResult } = require("express-validator");
-const lodash = require("lodash");
 
 const User = require("../../models/User");
 const UserAccount = require("../../models/UserAccount");
@@ -30,6 +29,8 @@ router.post(
     const { assetToMine, amount } = req.body;
 
     try {
+      // User allocation flow
+
       let userHashAccount = await UserAccount.findOne(
         { userId: req.user.id },
         { accounts: { $elemMatch: { assetId: 2 } } }
@@ -43,15 +44,10 @@ router.post(
         userHashAccount.accounts.map(item => item.balance)
       );
 
-      let allocationAccount = await HashCoinAllocation.findOne({
-        assetId: assetToMine
-      });
-
       if (!allocationAccount) {
         return res.status(400).json({ errors: [{ msg: "Asset not found" }] });
       }
 
-      // Calculations
       const newUserBalance = userHashBalance - amount;
 
       if (newUserBalance < 0) {
@@ -70,8 +66,10 @@ router.post(
         { new: true }
       );
 
-      console.log(userHashAccount);
-
+      // Platform allocation flow
+      let allocationAccount = await HashCoinAllocation.findOne({
+        assetId: assetToMine
+      });
       const newPlatformBalance = allocationAccount.totalAllocated + amount;
 
       allocationAccount = await HashCoinAllocation.findOneAndUpdate(

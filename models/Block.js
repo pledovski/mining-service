@@ -1,37 +1,44 @@
 const mongoose = require("mongoose");
 
 const BlockSchema = new mongoose.Schema({
-  // poolId: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: "pool"
-  // },
-  // assetId: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: "asset"
-  // },
+  poolId: {
+    // type: mongoose.Schema.Types.ObjectId,
+    type: Number,
+    ref: "pool"
+  },
+  assetId: {
+    // type: mongoose.Schema.Types.ObjectId,
+    type: Number,
+    ref: "asset"
+  },
   blockHash: {
-    type: "string",
+    type: String,
     required: true
   },
   blockHeight: {
-    type: "number",
+    type: Number,
     required: true
   },
   blockReward: {
-    type: "number",
+    type: Number,
     required: true
   },
   blockGenerationTime: {
-    type: 'number',
+    type: Number,
     required: true
   },
   status: {
     type: String,
     required: true
   },
+  paid: {
+    type: Boolean,
+    required: true,
+    default: false
+  },
   confirmationsLeft: {
     type: Number,
-    required: true
+    // required: true
   },
   difficulty: {
     type: Number
@@ -42,11 +49,11 @@ const BlockSchema = new mongoose.Schema({
   },
   sharesRejected: {
     type: Number,
-    required: true
+    // required: true
   },
   foundAt: {
     type: Date,
-    required: true
+    // required: true
   },
   createdAt: {
     type: Date,

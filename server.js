@@ -19,6 +19,8 @@ app.use('/api/asset', require('./routes/api/asset'));
 app.use('/api/allocation', require('./routes/api/allocation'));
 // app.use('/api/mining', require('./controllers/mining'));
 
+app.use('/api/launcher', require('./controllers/launcher'));
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
