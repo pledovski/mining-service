@@ -7,7 +7,7 @@ const config = require('config');
 
 const User = require("../../models/User");
 
-const userAccount = require("../../controllers/userAccount")
+const createUserAccounts = require("../../controllers/createUserAccounts")
 
 // @route     POST api/users
 // @desc      Register user
@@ -46,7 +46,7 @@ router.post(
 
       await user.save();
 
-      userAccount(user.id);
+      createUserAccounts(user.id);
 
       res.status(200).json({ msg: "User registered"});
     } catch (err) {

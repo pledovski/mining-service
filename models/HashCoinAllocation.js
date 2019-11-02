@@ -12,10 +12,16 @@ const HashCoinAllocationSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  // pubKey: {
-  //   type: String,
-  //   required: true
-  // },
+  assetSymbol: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  assetName: {
+    type: String,
+    required: true,
+    unique: true
+  },
   totalAllocated: {
     type: Number,
     default: 0

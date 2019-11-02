@@ -5,7 +5,7 @@ const UserAccountSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "user"
   },
-  balances: [
+  accounts: [
     {
       assetId: {
         type: Number,
@@ -17,12 +17,10 @@ const UserAccountSchema = new mongoose.Schema({
       assetSymbol: {
         type: String,
         required: true,
-        unique: true
       },
       assetName: {
         type: String,
         required: true,
-        unique: true
       },
       // pubKey: {
       //   type: String,
